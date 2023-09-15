@@ -1,35 +1,38 @@
-// import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-// import { routes } from "constans";
+// import Layout from "layout/Layout/Layout";
+// import React from "react";
+// import { Routes, Route } from "react-router-dom";
+// import { lazy } from "react";
 
-// function App() {
-// 	const navigate = useNavigate();
+// const Home = lazy(() => import("./pages/Home/Home"));
+// const Favorites = lazy(() => import("./pages/Favorites/Favorites"));
+// const Catalog = lazy(() => import("./pages/Catalog"));
+
+// const App = () => {
 // 	return (
 // 		<Routes>
-// 			<Route path={routes.HOME}>
+// 			<Route
+// 				path="/"
+// 				element={<Layout />}
+// 			>
 // 				<Route
 // 					index
-// 					element={<Home navigate={navigate} />}
+// 					element={<Home />}
 // 				/>
 // 				<Route
-// 					path={routes.CATALOG}
+// 					path="/catalog"
 // 					element={<Catalog />}
 // 				/>
 // 				<Route
-// 					path={routes.FAVORITES}
+// 					path="/favorites"
 // 					element={<Favorites />}
 // 				/>
 // 			</Route>
 // 			<Route
 // 				path="*"
-// 				element={
-// 					<Navigate
-// 						to={routes.HOME}
-// 						replace
-// 					/>
-// 				}
+// 				element={<Home />}
 // 			/>
 // 		</Routes>
 // 	);
-// }
+// };
 
 // export default App;
