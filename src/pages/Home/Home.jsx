@@ -1,12 +1,12 @@
-// import { Container } from "components/Container/Container.styled";
-// import { HomeTitle } from "./Home.styled";
+import { Container } from "components/Container/Container.styled";
+import { HomeTitle } from "./Home.styled";
 
-// const Home = () => {
-// 	return (
-// 		<Container>
-// 			<HomeTitle>Welcome to the car rental application in Ukraine</HomeTitle>
-// 		</Container>
-// 	);
-// };
+const Home = () => {
+	return (
+		<container>
+			<HomeTitle>Welcome to the car rental application in Ukraine</HomeTitle>
+		</container>
+	);
+};
 
-// export default Home;
+export default Home;
