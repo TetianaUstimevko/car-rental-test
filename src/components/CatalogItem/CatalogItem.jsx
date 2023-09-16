@@ -7,6 +7,7 @@ import {
 import { useLocation } from "react-router-dom";
 import PageModal from "components/Modal/Modal";
 import CatalogItemModal from "components/Modal/ModalItem";
+import { BsHeartFill } from "react-icons/bs";
 
 const CatalogItem = ({ car }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -85,7 +86,7 @@ const CatalogItem = ({ car }) => {
 							fill: isIconBlue && "#3470ff",
 						}}
 					>
-						{/* <Icon /> */}
+						<BsHeartFill />
 					</button>
 					<div>
 						<h2>

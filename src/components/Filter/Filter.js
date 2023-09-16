@@ -95,7 +95,12 @@ const Filter = ({ onSubmit }) => {
 					</div>
 				</div>
 			</div>
-			<button type="submit">Search</button>
+			<button
+				type="submit"
+				onClick={e => onFormSubmit(e)}
+			>
+				Search
+			</button>
 		</form>
 	);
 };

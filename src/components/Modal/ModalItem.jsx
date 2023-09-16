@@ -1,3 +1,4 @@
+import { BsXLg } from "react-icons/bs";
 const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 	const rentalConditions = el.rentalConditions.split("\n");
 
@@ -20,9 +21,12 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 				onClick={closeModal}
 				aria-label="Close modal window"
 			>
-				{/* <CloseIcon /> */}
+				<BsXLg />
 			</button>
-			<img src={el.img} />
+			<img
+				src={el.img}
+				alt={`${el.make} ${el.model}, ${el.year}`}
+			/>
 			<h3>
 				{el.make} <span>{el.model}</span>, {el.year}
 			</h3>
