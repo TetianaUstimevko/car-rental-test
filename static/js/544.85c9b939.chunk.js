@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[544],{544:function(e,t,a){a.r(t);var r=a(184);t.default=function(){return(0,r.jsx)("h1",{children:"Welcome to the car rental application in Ukraine"})}}}]);
+//# sourceMappingURL=544.85c9b939.chunk.js.map
