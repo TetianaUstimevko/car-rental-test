@@ -1,20 +1,36 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { Suspense } from "react";
+import s from "./Layout.module.css";
 
 const Layout = () => {
 	return (
 		<>
-			<header>
+			<header className={s.header}>
 				<nav>
-					<ul>
+					<ul className={s.nav}>
 						<li>
-							<NavLink to="/">Home</NavLink>
+							<NavLink
+								className={s.navlink}
+								to="/"
+							>
+								Home
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/catalog">Catalog</NavLink>
+							<NavLink
+								className={s.navlink}
+								to="/catalog"
+							>
+								Catalog
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/favorites">Favorites</NavLink>
+							<NavLink
+								className={s.navlink}
+								to="/favorites"
+							>
+								Favorites
+							</NavLink>
 						</li>
 					</ul>
 				</nav>

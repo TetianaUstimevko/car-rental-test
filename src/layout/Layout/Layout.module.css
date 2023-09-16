@@ -1,0 +1,34 @@
+.header {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 68px;
+	padding: 20px;
+	z-index: 10;
+	background-color: rgb(173, 223, 219);
+	box-shadow: rgb(139, 167, 147) -1px -1px 15px, rgb(255, 255, 255) 15px 15px 35px;
+}
+
+.nav {
+	display: flex;
+	gap: 20px;
+}
+
+.navlink {
+	color: rgb(6, 58, 54);
+	text-shadow: rgb(255, 255, 255) 0px 1px 1px;
+	font-family: "Manrope";
+	font-weight: 800;
+	font-size: 30px;
+	text-decoration: none;
+}
+.navlink:hover {
+	color: #ffffff;
+	transform: scale(1.1);
+}
+
+.navlink:active {
+	color: #ffffff;
+}
