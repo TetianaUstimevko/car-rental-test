@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import PageModal from "components/Modal/Modal";
 import CatalogItemModal from "components/Modal/ModalItem";
 import { BsHeartFill } from "react-icons/bs";
+import s from "./Catalogitem.module.css";
 
 const CatalogItem = ({ car }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -71,10 +72,11 @@ const CatalogItem = ({ car }) => {
 
 	return (
 		<>
-			<li>
+			<li className={s.carItem}>
 				<div>
-					<div>
+					<div className={s.imgCarItemContainer}>
 						<img
+							className={s.imgCarItem}
 							src={car.img}
 							alt={`${car.make} ${car.model}`}
 						/>
@@ -85,35 +87,36 @@ const CatalogItem = ({ car }) => {
 						style={{
 							fill: isIconBlue && "#3470ff",
 						}}
+						className={s.carItemBtn}
 					>
-						<BsHeartFill />
+						<BsHeartFill className={s.carItemIcon} />
 					</button>
-					<div>
-						<h2>
-							{car.make} <span>{car.model}</span>, {car.year}
+					<div className={s.carInfoContainer}>
+						<h2 className={s.carInfoTitle}>
+							{car.make} <span className={s.carInfoSpan}>{car.model}</span>, {car.year}
 						</h2>
-						<p>{car.rentalPrice}</p>
+						<p className={s.carPrice}>{car.rentalPrice}</p>
 					</div>
-					<ul>
-						<li>
+					<ul className={s.carList}>
+						<li className={s.carListItem}>
 							<p>{city}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p>{country}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p> {car.rentalCompany}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p>{car.type}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p>{car.make}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p>{addCommaToNumber(car.mileage)}</p>
 						</li>
-						<li>
+						<li className={s.carListItem}>
 							<p>{car.accessories[2]}</p>
 						</li>
 					</ul>
@@ -121,6 +124,7 @@ const CatalogItem = ({ car }) => {
 				<button
 					type="button"
 					onClick={openModal}
+					className={s.carBtnLearnMore}
 				>
 					Learn more
 				</button>
