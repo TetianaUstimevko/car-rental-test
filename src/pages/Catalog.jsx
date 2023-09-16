@@ -1,3 +1,3 @@
-// const Catalog = () => {};
+// const Catalog = () => { };
 
 // export default Catalog;
