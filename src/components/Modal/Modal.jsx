@@ -1,20 +1,16 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
+const modalRoot = document.querySelector("#modal-root");
+
 const PageModal = ({ closeModal, children }) => {
-	const modalRoot = document.querySelector("#modal-root");
-
-	if (!modalRoot) {
-		throw new Error("#modal-root element not found in the DOM");
-	}
-
-	const handleKeyDown = e => {
-		if (e.code === "Escape") {
-			closeModal();
-		}
-	};
-
 	useEffect(() => {
+		const handleKeyDown = e => {
+			if (e.code === "Escape") {
+				closeModal();
+			}
+		};
+
 		window.addEventListener("keydown", handleKeyDown);
 
 		return () => {

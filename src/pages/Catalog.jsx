@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useGetCarsQuery, useGetCarsByBrandQuery } from "redux/carsOperation";
-
 import Filter from "components/Filter/Filter";
 import CatalogList from "components/CatalogList/CatalogList";
 import BtnLoadMore from "components/BtnLoadMore/BtnLoadMore";

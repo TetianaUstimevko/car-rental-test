@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-
 import {
 	useGetFavoritesQuery,
 	useAddToFavoritesMutation,
 	useRemoveFromFavoritesMutation,
 } from "redux/carsOperation";
-
 import { useLocation } from "react-router-dom";
 import PageModal from "components/Modal/Modal";
 import CatalogItemModal from "components/Modal/ModalItem";
+
 const CatalogItem = ({ car }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
 
@@ -92,7 +91,7 @@ const CatalogItem = ({ car }) => {
 						<h2>
 							{car.make} <span>{car.model}</span>, {car.year}
 						</h2>
-						<p>{car.rentalp}</p>
+						<p>{car.rentalPrice}</p>
 					</div>
 					<ul>
 						<li>
