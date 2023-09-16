@@ -20,7 +20,7 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 				onClick={closeModal}
 				aria-label="Close modal window"
 			>
-				<CloseIcon />
+				{/* <CloseIcon /> */}
 			</button>
 			<img src={el.img} />
 			<h3>
