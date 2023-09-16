@@ -19,7 +19,7 @@
 // 			query: () => `favorites`,
 // 			providesTags: ["Favorites"],
 // 		}),
-// 		getToFavorites: builder.mutation({
+// 		addToFavorites: builder.mutation({
 // 			query: data => ({
 // 				url: `favorites`,
 // 				method: "POST",
@@ -37,5 +37,5 @@
 // 	}),
 // });
 
-// export const { getCars, getCarsByBrand, getFavorites, getToFavorites, removeFromFavorites } =
+// export const { getCars, getCarsByBrand, getFavorites, addToFavorites, removeFromFavorites } =
 // 	carsApi;
