@@ -1,0 +1,85 @@
+.filterForm {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.filterFormLabel {
+	margin-top: 38px;
+	margin-bottom: 8px;
+	color: #8a8a89;
+	font-size: 14px;
+	line-height: 1.28;
+}
+
+.filterFormThumb {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.filterFormThumbInput {
+	display: flex;
+}
+
+.filterFormInputThumb {
+	position: relative;
+}
+
+.filterFormLabelInput {
+	position: absolute;
+	top: 50%;
+	left: 24px;
+	transform: translateY(-50%);
+	font-family: "Manrope";
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.filterFormInputFrom {
+	width: 160px;
+	height: 48px;
+	border: none;
+	outline: none;
+	background-color: #f7f7fb;
+	border-right: 1px solid rgba(138, 138, 137, 0.2);
+	font-family: "Manrope";
+	font-weight: 700;
+	padding-left: 60px;
+	border-radius: 14px 0 0 14px;
+}
+
+.filterFormInputTo {
+	width: 160px;
+	height: 48px;
+	border: none;
+	outline: none;
+	background-color: #f7f7fb;
+	border-right: 1px solid rgba(138, 138, 137, 0.2);
+	font-family: "Manrope";
+	font-weight: 700;
+	padding-left: 44px;
+	border-radius: 0 14px 14px 0;
+}
+
+.filterFormBtn {
+	display: inline-block;
+	border: none;
+	width: 136px;
+	height: 48px;
+	border-radius: 12px;
+	padding: 0 12px;
+	color: #ffffff;
+	background-color: #3470ff;
+	transition: background-color 250ms linear;
+	cursor: pointer;
+}
+
+.filterFormBtn:hover,
+.filterFormBtn:focus {
+	background-color: #0b44cd;
+}

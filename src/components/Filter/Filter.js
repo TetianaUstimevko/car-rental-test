@@ -1,4 +1,8 @@
 import { useState } from "react";
+import s from "./Filter.module.css";
+import Select from "react-select";
+
+import { selectFilter } from "./stylesFilter";
 
 const prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600];
 
@@ -28,76 +32,92 @@ const makesList = [
 ];
 
 const Filter = ({ onSubmit }) => {
-	const [chosenBrand, setChosenBrand] = useState(); // Устанавливаем значение по умолчанию
+	const [chosenBrand, setChosenBrand] = useState();
 
 	const onFormSubmit = e => {
 		e.preventDefault();
-		// Создаем объект с выбранными параметрами и передаем его в onSubmit
 		onSubmit(chosenBrand.target.value);
 		return;
 	};
+	const brandOptions = makesList.map(el => ({
+		label: el,
+		value: el,
+	}));
 
+	const priceOptions = prices.map(el => ({
+		label: el.toString(),
+		value: el,
+	}));
 	return (
-		<form>
-			<div>
-				<label htmlFor="car-select">Car brand</label>
-				<select
+		<form className={s.filterForm}>
+			<div className={s.filterFormThumb}>
+				<label
+					className={s.filterFormLabel}
+					htmlFor="car-select"
+				>
+					Car brand
+				</label>
+				<Select
 					name="cars"
 					id="car-select"
+					options={brandOptions}
 					onChange={setChosenBrand}
-				>
-					<option value="without">All cars</option>
-					{makesList.map((el, index) => (
-						<option
-							key={index}
-							value={el}
-						>
-							{el}
-						</option>
-					))}
-				</select>
+					styles={selectFilter}
+					placeholder="Enter the text"
+				/>
 			</div>
-			<div>
-				<label htmlFor="price-select">Price/ 1 hour</label>
-				<select
+			<div className={s.filterFormThumb}>
+				<label
+					className={s.filterFormLabel}
+					htmlFor="price-select"
+				>
+					Price/ 1 hour
+				</label>
+				<Select
 					name="price"
 					id="price-select"
-				>
-					<option value="without">To $</option>
-					{prices.map((el, index) => (
-						<option
-							key={index}
-							value={el}
-						>
-							{el}
-						</option>
-					))}
-				</select>
+					options={priceOptions}
+					styles={selectFilter}
+					placeholder="To $"
+				/>
 			</div>
-			<div>
-				<label>Car mileage / km</label>
-				<div>
-					<div>
+			<div className={s.filterFormThumb}>
+				<label className={s.filterFormLabel}>Car mileage / km</label>
+				<div className={s.filterFormThumbInput}>
+					<div className={s.filterFormInputThumb}>
 						<input
+							className={s.filterFormInputFrom}
 							type="text"
 							name="mileageFrom"
 							id="mileageFrom"
 						/>
-						<label htmlFor="mileageFrom">From</label>
+						<label
+							className={s.filterFormLabelInput}
+							htmlFor="mileageFrom"
+						>
+							From
+						</label>
 					</div>
-					<div>
+					<div className={s.filterFormInputThumb}>
 						<input
+							className={s.filterFormInputTo}
 							type="text"
 							name="mileageTo"
 							id="mileageTo"
 						/>
-						<label htmlFor="mileageTo">To</label>
+						<label
+							className={s.filterFormLabelInput}
+							htmlFor="mileageTo"
+						>
+							To
+						</label>
 					</div>
 				</div>
 			</div>
 			<button
+				className={s.filterFormBtn}
 				type="submit"
-				onClick={e => onFormSubmit(e)}
+				onClick={onFormSubmit}
 			>
 				Search
 			</button>
