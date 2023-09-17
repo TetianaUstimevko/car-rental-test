@@ -32,13 +32,22 @@ const makesList = [
 ];
 
 const Filter = ({ onSubmit }) => {
-	const [chosenBrand, setChosenBrand] = useState();
+	const [chosenBrand, setChosenBrand] = useState("");
+	const [mileageFrom, setMileageFrom] = useState("");
+	const [mileageTo, setMileageTo] = useState("");
+	const [chosenPrice, setChosenPrice] = useState("");
 
 	const onFormSubmit = e => {
 		e.preventDefault();
-		onSubmit(chosenBrand.target.value);
-		return;
+
+		onSubmit({
+			brand: chosenBrand,
+			price: chosenPrice,
+			mileageFrom: mileageFrom,
+			mileageTo: mileageTo,
+		});
 	};
+
 	const brandOptions = makesList.map(el => ({
 		label: el,
 		value: el,
@@ -48,8 +57,12 @@ const Filter = ({ onSubmit }) => {
 		label: el.toString(),
 		value: el,
 	}));
+
 	return (
-		<form className={s.filterForm}>
+		<form
+			className={s.filterForm}
+			onSubmit={onFormSubmit}
+		>
 			<div className={s.filterFormThumb}>
 				<label
 					className={s.filterFormLabel}
@@ -61,9 +74,9 @@ const Filter = ({ onSubmit }) => {
 					name="cars"
 					id="car-select"
 					options={brandOptions}
-					onChange={setChosenBrand}
+					onChange={selectedOption => setChosenBrand(selectedOption.value)}
 					styles={selectFilter}
-					placeholder="Enter the text"
+					placeholder="Select a brand"
 				/>
 			</div>
 			<div className={s.filterFormThumb}>
@@ -77,8 +90,9 @@ const Filter = ({ onSubmit }) => {
 					name="price"
 					id="price-select"
 					options={priceOptions}
+					onChange={selectedOption => setChosenPrice(selectedOption.value)}
 					styles={selectFilter}
-					placeholder="To $"
+					placeholder="Select a price"
 				/>
 			</div>
 			<div className={s.filterFormThumb}>
@@ -90,6 +104,8 @@ const Filter = ({ onSubmit }) => {
 							type="text"
 							name="mileageFrom"
 							id="mileageFrom"
+							value={mileageFrom}
+							onChange={e => setMileageFrom(e.target.value)}
 						/>
 						<label
 							className={s.filterFormLabelInput}
@@ -104,6 +120,8 @@ const Filter = ({ onSubmit }) => {
 							type="text"
 							name="mileageTo"
 							id="mileageTo"
+							value={mileageTo}
+							onChange={e => setMileageTo(e.target.value)}
 						/>
 						<label
 							className={s.filterFormLabelInput}
@@ -117,7 +135,6 @@ const Filter = ({ onSubmit }) => {
 			<button
 				className={s.filterFormBtn}
 				type="submit"
-				onClick={onFormSubmit}
 			>
 				Search
 			</button>
