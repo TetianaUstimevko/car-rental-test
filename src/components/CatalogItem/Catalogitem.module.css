@@ -83,30 +83,26 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .carListItem {
 	position: relative;
-
 	color: rgba(18, 20, 23, 0.7);
-
 	font-size: 12px;
+}
+.carListItem:not(:last-child) {
+	margin-right: 12px;
+}
 
-	&:not(:last-child) {
-		margin-right: 12px;
-	}
-
-	&:not(:last-child)::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: -6px;
-		height: 12px;
-		border: 1px solid rgba(18, 20, 23, 0.2);
-	}
+.carListItem:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	top: 12px;
+	right: -6px;
+	height: 12px;
+	border: 1px solid rgba(18, 20, 23, 0.2);
 }
 
 .carBtnLearnMore {
