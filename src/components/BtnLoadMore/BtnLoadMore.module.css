@@ -1,0 +1,16 @@
+.btnLoadMore {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	background-color: transparent;
+	color: #3470ff;
+	text-decoration: underline;
+	cursor: pointer;
+	transition: color 250ms linear;
+}
+
+.btnLoadMore:hover,
+.btnLoadMore:focus {
+	color: #0b44cd;
+}
