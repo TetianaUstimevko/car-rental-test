@@ -1,4 +1,6 @@
 import { BsXLg } from "react-icons/bs";
+import s from "./ModalItem.module.css";
+
 const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 	const rentalConditions = el.rentalConditions.split("\n");
 
@@ -15,49 +17,51 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 	};
 
 	return (
-		<div>
+		<div className={s.modalItemContainer}>
 			<button
+				className={s.closeModalBtn}
 				type="button"
 				onClick={closeModal}
 				aria-label="Close modal window"
 			>
-				<BsXLg />
+				<BsXLg className={s.closeModalIcon} />
 			</button>
 			<img
+				className={s.modalImg}
 				src={el.img}
 				alt={`${el.make} ${el.model}, ${el.year}`}
 			/>
-			<h3>
-				{el.make} <span>{el.model}</span>, {el.year}
+			<h3 className={s.modalItemTitle}>
+				{el.make} <span className={s.modalItemSpan}>{el.model}</span>, {el.year}
 			</h3>
-			<div>
-				<ul>
-					<li>
+			<div className={s.modalItemThumb}>
+				<ul className={s.modalItemList}>
+					<li className={s.modalItemListItem}>
 						<p>{city}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>{country}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>id: {el.id}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>Year: {el.year}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>Type: {el.type}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>Fuel Consumption: {el.fuelConsumption}</p>
 					</li>
-					<li>
+					<li className={s.modalItemListItem}>
 						<p>Engine Size: {el.engineSize}</p>
 					</li>
 				</ul>
-				<p>{el.description}</p>
+				<p className={s.modalItemDescription}>{el.description}</p>
 				<div>
-					<p>Accessories and functionalities:</p>
-					<ul>
+					<p className={s.modalItemText}>Accessories and functionalities:</p>
+					<ul className={s.modalItemList}>
 						{el.functionalities.map((string, index) => (
 							<li key={index}>{string}</li>
 						))}
@@ -67,13 +71,16 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 					</ul>
 				</div>
 				<div>
-					<p>Rental Conditions: </p>
-					<ul>
+					<p className={s.modalItemText}>Rental Conditions: </p>
+					<ul className={s.modalItemRentalList}>
 						{rentalConditions.map((condition, index) => {
 							const searchAge = numberFinder(condition);
 
 							return (
-								<li key={index}>
+								<li
+									className={s.modalItemRentalItem}
+									key={index}
+								>
 									<p>
 										{condition.replace(`${searchAge}`, "")}
 										{searchAge && <span>{searchAge}</span>}
@@ -81,12 +88,12 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 								</li>
 							);
 						})}
-						<li>
+						<li className={s.modalItemRentalItem}>
 							<p>
 								Milage: <span>{addComma(el.mileage)}</span>
 							</p>
 						</li>
-						<li>
+						<li c>
 							<p>
 								Price: <span>{el.rentalPrice}</span>
 							</p>
@@ -96,6 +103,7 @@ const CatalogItemModal = ({ el, city, country, addComma, closeModal }) => {
 			</div>
 
 			<button
+				className={s.modalItemBtn}
 				href="tel:+380730000000"
 				rel="noopener"
 			>

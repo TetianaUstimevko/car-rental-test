@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import s from "./Modal.module.css";
 
 const modalRoot = document.querySelector("#modal-root");
 
@@ -25,8 +26,11 @@ const PageModal = ({ closeModal, children }) => {
 	};
 
 	return createPortal(
-		<div onClick={handleBackdropClick}>
-			<div>{children}</div>
+		<div
+			className={s.modalOverlay}
+			onClick={handleBackdropClick}
+		>
+			<div className={s.modalThumb}>{children}</div>
 		</div>,
 		modalRoot,
 	);

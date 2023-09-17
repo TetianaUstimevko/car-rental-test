@@ -1,0 +1,145 @@
+s.modalItemContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	max-width: 540px;
+	height: 100vh;
+	max-height: 700px;
+	gap: 10px;
+	padding: 20px;
+	border-radius: 15px;
+	background-color: #ffffff;
+}
+.closeModalBtn {
+	width: 15px;
+	height: 15px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.closeModalIcon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 15px;
+	height: 15px;
+}
+
+.modalItemThumb {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	overflow-y: scroll;
+}
+
+.modalItemThumb::-webkit-scrollbar {
+	background-color: #d8d8d8;
+	width: 4px;
+	border-radius: 12px;
+}
+
+.modalItemThumb::-webkit-scrollbar-thumb {
+	background-color: #3470ff;
+	border-radius: 12px;
+}
+
+.modalImg {
+	display: block;
+	width: 470px;
+	height: auto;
+
+	border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.modalItemTitle {
+	font-size: 14px;
+	line-height: 1.5;
+}
+.modalItemSpan {
+	color: #3470ff;
+	font-weight: 600;
+}
+
+.modalItemList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 340px;
+}
+
+.modalItemListItem {
+	position: relative;
+	color: rgba(18, 20, 23, 0.5);
+	font-size: 12px;
+}
+
+.modalItemListItem:not(:last-child) {
+	margin-right: 12px;
+}
+
+.modalItemListItem:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -6px;
+	height: 14px;
+	border: 1px solid rgba(18, 20, 23, 0.1);
+}
+
+.modalItemDescription {
+	max-width: 440px;
+	font-family: "Manrope";
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.42;
+}
+
+.modalItemText {
+	margin-bottom: 8px;
+	font-size: 14px;
+	line-height: 1.42;
+}
+
+.modalItemRentalList {
+	list-style: none;
+	margin: 0;
+	margin-bottom: 24px;
+	padding: 0;
+	gap: 8px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.modalItemRentalItem {
+	padding: 7px 14px;
+	border-radius: 35px;
+	font-family: "Manrope";
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.5;
+	background-color: #f9f9f9;
+}
+
+.modalItemBtn {
+	display: inline-flex;
+	width: 168px;
+	justify-content: center;
+	border: none;
+	border-radius: 12px;
+	padding: 12px;
+	color: #ffffff;
+	background-color: #3470ff;
+	text-decoration: none;
+	transition: background-color 250ms linear;
+	cursor: pointer;
+}
+.modalItemBtn:hover,
+.modalItemBtn:focus {
+	background-color: #0b44cd;
+}
