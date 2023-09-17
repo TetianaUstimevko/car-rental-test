@@ -1,3 +1,4 @@
+// Layout.jsx
 import { Outlet, NavLink } from "react-router-dom";
 import { Suspense } from "react";
 import s from "./Layout.module.css";

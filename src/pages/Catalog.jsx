@@ -1,4 +1,4 @@
-// pages Catalog.jsx
+// Catalog.jsx
 import { useState, useEffect } from "react";
 import { useGetCarsQuery, useGetCarsByBrandQuery } from "redux/carsOperation";
 import Filter from "components/Filter/Filter";
