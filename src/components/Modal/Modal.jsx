@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import s from "./Modal.module.css";
 
-const modalRoot = document.querySelector("#modal-root");
-
 const PageModal = ({ closeModal, children }) => {
 	useEffect(() => {
 		const handleKeyDown = e => {
@@ -32,7 +30,7 @@ const PageModal = ({ closeModal, children }) => {
 		>
 			<div className={s.modalThumb}>{children}</div>
 		</div>,
-		modalRoot,
+		document.body,
 	);
 };
 
